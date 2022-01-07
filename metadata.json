@@ -1,0 +1,30 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "contact@anvil-interactive.dev",
+                "Name": "Bouteiller <a2n> Alan"
+            }
+        ],
+        "Category": "Windows and Tasks",
+        "Description": "A windowed app counter",
+        "Dependencies": [
+          "wmctrl"
+        ],
+        "EnabledByDefault": true,
+        "Icon": "user-desktop",
+        "Id": "appcounter",
+        "License": "GPL-2.0+",
+        "Name": "App Counter",
+        "ServiceTypes": [
+            "Plasma/Applet"
+        ],
+        "Version": "1.0",
+        "Website": ""
+    },
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-MainScript": "ui/appcounter.qml",
+    "X-Plasma-Provides": [
+      "org.kde.plasma.virtualdesktops"
+    ]
+}

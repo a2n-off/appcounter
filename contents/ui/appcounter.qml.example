@@ -1,0 +1,100 @@
+import QtQuick 2.1
+import QtQuick.Layouts 1.1
+import QtQuick.Controls 1.4
+import org.kde.plasma.plasmoid 2.0
+import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.private.pager 2.0
+
+import org.kde.taskmanager 0.1 as TaskManager
+import org.kde.plasma.private.taskmanager 0.1 as TaskManagerApplet
+
+Item {
+
+    // exec the command
+    function update() {
+      // get the list of window and remove break line and replace space by ,
+      // give, for example :
+      // 0x0620000f,,1,arch,plasmawindowed,test.appcounter
+      // 0x0620000f,-1,arch,plasmawindowed,test.appcounter
+      dataSource.exec("wmctrl -l | tr '\n' ' ' | tr ' ' ','")
+    }
+
+    // count the number of window
+    function count(items) {
+
+      // transform on array
+      const arr = items.split(',')
+      // give 0 1 2 3 .......
+      const currentDesktop = pagerModel.currentPage
+      // filter
+      // here I get the nb of currentDesktop because the window
+      // for the current workspace is tagged to
+      // the id of the current workspace
+      // the window in sticky mode is -1
+      const result = arr.filter(item => item.toString() === currentDesktop.toString());
+
+      // get the nb of currentDesktop into the array
+      // output.text = result.length.toString()
+      output.text = taskmanager.count
+    }
+
+    TaskManager.TasksModel {
+      id: taskmanager
+      filterByVirtualDesktop: true
+      virtualDesktop: pagerModel.currentPage
+    }
+
+    // create a dataSource
+    PlasmaCore.DataSource {
+        id: dataSource
+        engine: "executable"
+        connectedSources: []
+
+        function exec(cmd) {
+            connectSource(cmd)
+        }
+
+        onNewData: {
+            var stdout = data["stdout"]
+            exited(sourceName, stdout)
+            disconnectSource(sourceName)
+        }
+
+        signal exited(string sourceName, string stdout)
+    }
+
+    // connect the dataSource to the label components
+    Connections {
+        target: dataSource
+        onExited: {
+            count(stdout)
+        }
+    }
+
+    // getting the current desktop
+    PagerModel {
+        id: pagerModel
+        // enabled: root.visible
+        // showDesktop: (3 === 1)
+        // showOnlyCurrentScreen: true
+    }
+
+    // refresh the data
+    Timer {
+        id: timer
+        interval: 1 * 1000
+        running: true
+        repeat: true
+        onTriggered: update()
+    }
+
+    // the ui label
+    PlasmaComponents.Label {
+      id: output
+      text: 'Nothing yet'
+      anchors.fill: parent
+      horizontalAlignment: Text.AlignHCenter
+    }
+
+}
