@@ -1,5 +1,7 @@
 # App counter - plasma widget
 
+[pres](assets/Screenshot_20220109_220002.png)
+
 ## Description
 
 Counts the number of open windows.
