@@ -6,7 +6,6 @@ import org.kde.kirigami 2.5 as Kirigami
 QtLayouts.ColumnLayout {
     id: appearancePage
 
-    property alias cfg_displayWidth: displayWidth.value
     property string cfg_displayFormat: "desktopCount"
     property alias cfg_showTotal: showTotal.checked
     property alias cfg_showDesktop: showDesktop.checked
@@ -80,32 +79,9 @@ QtLayouts.ColumnLayout {
         }
     }
 
-    // Item {
-    //   Kirigami.FormData.isSection: true
-    // }
-    //
-    // Kirigami.FormLayout {
-    //     QtLayouts.Layout.fillWidth: true
-    //
-    //     QtLayouts.RowLayout {
-    //         QtLayouts.Layout.fillWidth: true
-    // 
-    //         Kirigami.FormData.label: i18n("Width :")
-    //         Kirigami.FormData.buddyFor: displayWidth
-    //
-    //         QtControls.SpinBox {
-    //             id: displayWidth
-    //             from: 1
-    //             to: 500
-    //             editable: true
-    //             validator: IntValidator {
-    //                 locale: control.locale.name
-    //                 bottom: Math.min(control.from, control.to)
-    //                 top: Math.max(control.from, control.to)
-    //             }
-    //         }
-    //     }
-    // }
+    Item {
+      Kirigami.FormData.isSection: true
+    }
 
     Item {
         QtLayouts.Layout.fillHeight: true

@@ -32,11 +32,6 @@
       <default>false</default>
     </entry>
 
-    <entry name="displayWidth" type="Int">
-      <label>Width size</label>
-      <default>100</default>
-    </entry>
-
   </group>
 
 </kcfg>
