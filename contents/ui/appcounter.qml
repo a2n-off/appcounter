@@ -86,7 +86,7 @@ Item {
     // ui
     Plasmoid.compactRepresentation: Item {
       id: output
-      width: 100
+      // width: plasmoid.configuration.displayWidth
 
       PlasmaCore.IconItem {
           source: ""

@@ -6,7 +6,7 @@ import org.kde.kirigami 2.5 as Kirigami
 QtLayouts.ColumnLayout {
     id: appearancePage
 
-    property int cfg_displayWidth: 100
+    property alias cfg_displayWidth: displayWidth.value
     property string cfg_displayFormat: "desktopCount"
     property alias cfg_showTotal: showTotal.checked
     property alias cfg_showDesktop: showDesktop.checked
@@ -79,6 +79,33 @@ QtLayouts.ColumnLayout {
             text: i18n("Tasks are grouped by the application backing them (3 same app give +1 on the total result and not +3)")
         }
     }
+
+    // Item {
+    //   Kirigami.FormData.isSection: true
+    // }
+    //
+    // Kirigami.FormLayout {
+    //     QtLayouts.Layout.fillWidth: true
+    //
+    //     QtLayouts.RowLayout {
+    //         QtLayouts.Layout.fillWidth: true
+    // 
+    //         Kirigami.FormData.label: i18n("Width :")
+    //         Kirigami.FormData.buddyFor: displayWidth
+    //
+    //         QtControls.SpinBox {
+    //             id: displayWidth
+    //             from: 1
+    //             to: 500
+    //             editable: true
+    //             validator: IntValidator {
+    //                 locale: control.locale.name
+    //                 bottom: Math.min(control.from, control.to)
+    //                 top: Math.max(control.from, control.to)
+    //             }
+    //         }
+    //     }
+    // }
 
     Item {
         QtLayouts.Layout.fillHeight: true
