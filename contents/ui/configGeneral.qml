@@ -6,9 +6,12 @@ import org.kde.kirigami 2.5 as Kirigami
 QtLayouts.ColumnLayout {
     id: appearancePage
 
+    property int cfg_displayWidth: 100
     property string cfg_displayFormat: "desktopCount"
     property alias cfg_showTotal: showTotal.checked
     property alias cfg_showDesktop: showDesktop.checked
+    property alias cfg_filterByActivity: filterByActivity.checked
+    property alias cfg_groupingApp: groupingApp.checked
 
     QtControls.ComboBox {
       id: displayFormat
@@ -49,11 +52,31 @@ QtLayouts.ColumnLayout {
         QtControls.CheckBox {
             id: showTotal
             text: i18n("Add total count (Y/A)")
+            Kirigami.FormData.label: i18n("Option for desktop count display format")
         }
 
         QtControls.CheckBox {
             id: showDesktop
             text: i18n("Add desktop id (Y~B)")
+        }
+    }
+
+    Item {
+      Kirigami.FormData.isSection: true
+    }
+
+    Kirigami.FormLayout {
+        QtLayouts.Layout.fillWidth: true
+
+        QtControls.CheckBox {
+            id: filterByActivity
+            text: i18n("Filter the result by activity")
+            Kirigami.FormData.label: i18n("Option for count function :")
+        }
+
+        QtControls.CheckBox {
+            id: groupingApp
+            text: i18n("Tasks are grouped by the application backing them (3 same app give +1 on the total result and not +3)")
         }
     }
 

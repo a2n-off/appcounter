@@ -60,12 +60,12 @@ Item {
     // get the info for one virtual desktop
     TaskManager.TasksModel {
       id: taskmanagerFiltered
-      filterByVirtualDesktop: true // todo add a config for that
-      filterByActivity: true // todo add a config for that
+      filterByVirtualDesktop: true
+      filterByActivity: plasmoid.configuration.filterByActivity
 
       // get +1 for each window (so 3 konsole give +3)
       // if enabled w/ default value get +1 for each "app" (so 3 konsole give +1)
-      groupMode: TaskManager.TasksModel.GroupDisabled // todo add a config for that
+      groupMode: plasmoid.configuration.groupingApp ? TaskManager.TasksModel.GroupApplications : TaskManager.TasksModel.GroupDisabled
 
       // qstring on wayland or uint >0 in x11
       // todo replace false by something like KWindowSystem.isPlatformX11
@@ -76,11 +76,11 @@ Item {
     TaskManager.TasksModel {
       id: taskmanagerAll
       filterByVirtualDesktop: false
-      filterByActivity: true // todo add a config for that
+      filterByActivity: plasmoid.configuration.filterByActivity
 
       // get +1 for each window (so 3 konsole give +3)
       // if enabled w/ default value get +1 for each "app" (so 3 konsole give +1)
-      groupMode: TaskManager.TasksModel.GroupDisabled // todo add a config for that
+      groupMode: plasmoid.configuration.groupingApp ? TaskManager.TasksModel.GroupApplications : TaskManager.TasksModel.GroupDisabled
     }
 
     // ui

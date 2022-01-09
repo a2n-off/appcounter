@@ -22,6 +22,16 @@
       <default>false</default>
     </entry>
 
+    <entry name="filterByActivity" type="Bool">
+      <label>Filter the result by activity.</label>
+      <default>false</default>
+    </entry>
+
+    <entry name="groupingApp" type="Bool">
+      <label>Tasks are grouped by the application backing them (3 same app give +1 on the total result and not +3).</label>
+      <default>false</default>
+    </entry>
+
   </group>
 
 </kcfg>
