@@ -21,17 +21,40 @@ Item {
 
     // count the number of window
     function count() {
-      console.debug(taskmanagerFiltered.count)
-      root.text = taskmanagerFiltered.count.toString()
-                  + root.totSep
-                  + taskmanagerAll.count.toString()
-                  + root.deskSep
-                  + windowSystem.currentDesktop.toString()
+      let text = ""
+
+      if (plasmoid.configuration.displayFormat === "totalCount") {
+        text = taskmanagerAll.count
+      } else {
+        text = taskmanagerFiltered.count
+
+        if (plasmoid.configuration.showTotal) {
+          text += root.totSep + taskmanagerAll.count
+        }
+
+        if (plasmoid.configuration.showDesktop) {
+          text += root.deskSep + windowSystem.currentDesktop
+        }
+      }
+
+      root.text = text
     }
 
     // get the info of KWin
     KWindowSystem.KWindowSystem {
       id: windowSystem
+
+      // refresh the data when the user switch desktop
+      onCurrentDesktopChanged: {
+        root.count()
+      }
+    }
+
+    // refresh the data when needed
+    TaskManager.TasksModel {
+      onDataChanged: {
+        root.count()
+      }
     }
 
     // get the info for one virtual desktop
@@ -47,11 +70,6 @@ Item {
       // qstring on wayland or uint >0 in x11
       // todo replace false by something like KWindowSystem.isPlatformX11
       virtualDesktop: false ? windowSystem.currentDesktop.toString() : windowSystem.currentDesktop
-
-      // refresh the data
-      onDataChanged: {
-        root.count()
-      }
     }
 
     // get the info for all the virtual desktop
@@ -63,17 +81,12 @@ Item {
       // get +1 for each window (so 3 konsole give +3)
       // if enabled w/ default value get +1 for each "app" (so 3 konsole give +1)
       groupMode: TaskManager.TasksModel.GroupDisabled // todo add a config for that
-
-      // refresh the data
-      onDataChanged: {
-        root.count()
-      }
     }
 
+    // ui
     Plasmoid.compactRepresentation: Item {
       id: output
-
-      width: 50
+      width: 100
 
       PlasmaCore.IconItem {
           source: ""
@@ -82,7 +95,6 @@ Item {
       PlasmaComponents.Label {
         id: label
         text: root.text
-        wrapMode: Text.Wrap
         width: parent.width
         height: parent.height
         anchors.fill: parent

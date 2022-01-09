@@ -6,9 +6,22 @@
   <kcfgfile name=""/>
 
   <group name="General">
-    <entry name="countSticky" type="Bool">
+
+    <entry name="displayFormat" type="string">
+      <label>The display format.</label>
+      <default>desktopCount</default>
+    </entry>
+
+    <entry name="showTotal" type="Bool">
+      <label>Show the total count of window for the desktopCount display format.</label>
       <default>false</default>
     </entry>
+
+    <entry name="showDesktop" type="Bool">
+      <label>Show the id of the current desktop for the desktopCount display format.</label>
+      <default>false</default>
+    </entry>
+
   </group>
 
 </kcfg>
