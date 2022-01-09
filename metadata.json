@@ -12,14 +12,14 @@
           "wmctrl"
         ],
         "EnabledByDefault": true,
-        "Icon": "user-desktop",
+        "Icon": "preferences-desktop",
         "Id": "appcounter",
         "License": "GPL-2.0+",
         "Name": "App Counter",
         "ServiceTypes": [
             "Plasma/Applet"
         ],
-        "Version": "1.0",
+        "Version": "1.1",
         "Website": ""
     },
     "X-Plasma-API": "declarativeappletscript",

@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=appcounter
 Comment=An app counter
-Icon=user-desktop
+Icon=preferences-desktop
 Type=Service
 X-Plasma-API=declarativeappletscript
 X-KDE-ServiceTypes=Plasma/Applet
@@ -10,7 +10,7 @@ X-Plasma-Provides=org.kde.plasma.virtualdesktops
 X-KDE-PluginInfo-Author=Bouteiller <a2n> Alan
 X-KDE-PluginInfo-Email=contact@anvil-interactive.dev
 X-KDE-PluginInfo-Name=appcounter
-X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Version=1.1
 X-KDE-PluginInfo-Website=https://github.com/bouteillerAlan/appcounter
 X-KDE-PluginInfo-Category=Windows and Tasks
 X-KDE-PluginInfo-Depends=
