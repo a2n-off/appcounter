@@ -1,6 +1,6 @@
 # App counter - plasma widget
 
-[pres](assets/Screenshot_20220109_220002.png)
+![pres](assets/Screenshot_20220109_220002.png)
 
 ## Description
 
