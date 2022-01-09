@@ -10,9 +10,9 @@ Convenient for e.g plasma users using a tilling wm but no task manager.
 
 | Name | Description | Result |
 |--|--|--|
-| displayFormat | If you want only the total of the open app or the total by virtual desktop | Y or X |
-| showTotal | Only if displayFormat is set to desktop count - add the total of the open app after the total of open app for the current desktop | X/A or X/A~B |
-| showDesktop | Only if displayFormat is set to desktop count - add the id of the current virtual desktop after the total of open app for the current desktop | X~B or X/A~B |
+| displayFormat | If you want only the total of the open app or the total by virtual desktop | `Y` or `X` |
+| showTotal | Only if displayFormat is set to desktop count - add the total of the open app after the total of open app for the current desktop | `X/A` or `X/A~B` |
+| showDesktop | Only if displayFormat is set to desktop count - add the id of the current virtual desktop after the total of open app for the current desktop | `X~B` or `X/A~B` |
 | filterByActivity | if you want to filter all the stuff by activity | |
 | groupingApp | if you want to group or not the app by the application backing them | |
 
