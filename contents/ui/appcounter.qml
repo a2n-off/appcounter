@@ -13,7 +13,7 @@ import org.kde.kwindowsystem 1.0 as KWindowSystem
 Item {
     id: root
 
-    property string text: "nothing yet"
+    property string text: "0"
     property string deskSep: "~"
     property string totSep: "/"
 
