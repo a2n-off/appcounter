@@ -2,7 +2,7 @@
     "KPlugin": {
         "Authors": [
             {
-                "Email": "contact@anvil-interactive.dev",
+                "Email": "a2n.dev@pm.me",
                 "Name": "Bouteiller <a2n> Alan"
             }
         ],
@@ -14,13 +14,13 @@
         "EnabledByDefault": true,
         "Icon": "preferences-desktop",
         "Id": "appcounter",
-        "License": "GPL-2.0+",
+        "License": "GPL-3.0+",
         "Name": "App Counter",
         "ServiceTypes": [
             "Plasma/Applet"
         ],
-        "Version": "1.1",
-        "Website": ""
+        "Version": "1.2",
+        "Website": "https://github.com/bouteillerAlan/appcounter"
     },
     "X-Plasma-API": "declarativeappletscript",
     "X-Plasma-MainScript": "ui/appcounter.qml",
