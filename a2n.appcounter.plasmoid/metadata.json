@@ -13,7 +13,7 @@
         ],
         "EnabledByDefault": true,
         "Icon": "preferences-desktop",
-        "Id": "appcounter",
+        "Id": "a2n.appcounter.plasmoid",
         "License": "GPL-3.0+",
         "Name": "App Counter",
         "ServiceTypes": [

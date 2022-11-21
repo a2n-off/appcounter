@@ -1,3 +1,5 @@
+# Copyright (C) 2022  Bouteiller Alan - for more information check the LICENSE file at the root of the project
+
 [Desktop Entry]
 Name=appcounter
 Comment=An app counter
@@ -9,7 +11,7 @@ X-Plasma-MainScript=ui/appcounter.qml
 X-Plasma-Provides=org.kde.plasma.virtualdesktops
 X-KDE-PluginInfo-Author=Bouteiller <a2n> Alan
 X-KDE-PluginInfo-Email=a2n.dev@pm.me
-X-KDE-PluginInfo-Name=appcounter
+X-KDE-PluginInfo-Name=a2n.appcounter.plasmoid
 X-KDE-PluginInfo-Version=1.2
 X-KDE-PluginInfo-Website=https://github.com/bouteillerAlan/appcounter
 X-KDE-PluginInfo-Category=Windows and Tasks

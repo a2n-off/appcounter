@@ -10,7 +10,7 @@ Convenient for e.g plasma users using a tilling wm but no task manager.
 
 ## Installation
 
-Place the source in `~/.local/share/plasma/plasmoids/` or dl via [the KDE store](https://www.pling.com/p/1680700/)
+Place the source (`a2n.appcounter.plasmoid` folder) in `~/.local/share/plasma/plasmoids/` or dl via [the KDE store](https://www.pling.com/p/1680700/)
 
 ## Configuration
 
