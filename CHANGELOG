@@ -1,5 +1,6 @@
 ## v1.3
   - add license and utils files
+  - improve the file architecture
 
 ## 1.2-2710222
   - display 0 instead of "nothing yet", thanks to @alxlg (pr #1)
